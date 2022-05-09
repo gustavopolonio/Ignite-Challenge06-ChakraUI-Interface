@@ -8,9 +8,7 @@ import { Navigation, Pagination } from 'swiper'
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-// import 'swiper/css/bundle'
 
-// SwiperCore.use([Navigation])
 
 export default function Home() {
 
