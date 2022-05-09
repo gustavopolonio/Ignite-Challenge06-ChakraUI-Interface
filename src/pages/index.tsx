@@ -3,8 +3,9 @@ import { MainBanner } from '../components/MainBanner'
 import { InformativeBar } from '../components/InformativeBar'
 import { Footer } from '../components/Footer'
 import { api } from '../services/api'
-import { Flex, Divider, Heading, Image, Text, Stack } from '@chakra-ui/react'
+import { Flex, Divider, Heading, Image, Text, Stack, Link as ChakraLink} from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
+import Link from 'next/link'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper'
@@ -14,6 +15,7 @@ import 'swiper/css/pagination';
 
 interface Continent {
   id: number,
+  slug: string,
   title: string,
   subtitle: string,
   imageHome: string,
@@ -30,7 +32,14 @@ export default function Home({ continents }: HomeProps) {
   return (
     <Flex flexDir='column' h='100vh'>
       <Header />
-      <MainBanner />
+      <Flex w='100%' align='center' justify='center'>
+        <Image 
+          src='/mainBanner.png'
+          alt='Main banner' 
+          w='100%'
+          h='auto'
+        />
+      </Flex>
       <InformativeBar />
 
       <Divider 
@@ -60,23 +69,31 @@ export default function Home({ continents }: HomeProps) {
           {continents.map(continent => (
             <SwiperSlide
               key={continent.id} 
-              style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-              <Stack 
-                position='absolute' 
-                spacing={4} 
-                textAlign='center' 
-                color='#F5F8FA' 
-                zIndex={1}
-              >
-                <Heading fontSize={48}>{continent.title}</Heading>
-                <Text fontSize={24} fontWeight='700'>{continent.subtitle}</Text>
-              </Stack>
-              <Image 
-                src={continent.imageHome} 
-                alt={continent.title} 
-                w='100%' 
-                filter='brightness(0.6)' 
-              />
+              style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+            >
+              <Link href={continent.slug} passHref>
+                <ChakraLink w='100%'>
+                  <Stack
+                    position='absolute'
+                    top='50%'
+                    left='50%'
+                    transform='translate(-50%,-50%)'
+                    spacing={4} 
+                    textAlign='center' 
+                    color='#F5F8FA' 
+                    zIndex={1}
+                    >
+                    <Heading fontSize={48}>{continent.title}</Heading>
+                    <Text fontSize={24} fontWeight='700'>{continent.subtitle}</Text>
+                  </Stack>
+                  <Image 
+                    src={continent.imageHome} 
+                    alt={continent.title} 
+                    w='100%' 
+                    filter='brightness(0.6)' 
+                  />
+                </ChakraLink>
+              </Link>
             </SwiperSlide>
           ))}
         </Swiper>
