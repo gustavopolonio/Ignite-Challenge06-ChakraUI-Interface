@@ -30,7 +30,7 @@ export function ContinentHighlight({ number, title, hasTooltip = false }: Contin
       >
         {title}
         {hasTooltip && (
-          <Tooltip label='Informação'>
+          <Tooltip label='Cidades que estão entre as 100 cidades mais visitadas do mundo.'>
             <Text as='span' ml='1'>
               <AiOutlineInfoCircle fontSize='16' color='#999999' />
             </Text>

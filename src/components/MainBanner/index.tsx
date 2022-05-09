@@ -8,7 +8,7 @@ interface MainBannerProps {
 export function MainBanner({ src, alt }: MainBannerProps) {
 
   return (
-    <Flex w='100%' maxH='500px' align='center' justify='center' overflow='hidden'>
+    <Flex w='100%' minH='500px' align='center' justify='center' overflow='hidden'>
       <Image 
         src={src} 
         alt={alt}

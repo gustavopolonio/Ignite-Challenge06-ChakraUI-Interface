@@ -1,8 +1,7 @@
-import { Flex, Tooltip, Text, Stack, Heading, SimpleGrid, Image, HStack } from '@chakra-ui/react'
+import { Flex, Text, Stack, Heading, SimpleGrid, Image, HStack } from '@chakra-ui/react'
 import { Header } from '../components/Header'
 import { MainBanner } from '../components/MainBanner'
 import { ContinentHighlight } from '../components/ContinentHighlight'
-import { AiOutlineInfoCircle } from 'react-icons/ai'
 import { Footer } from '../components/Footer'
 
 export default function Continent() {
@@ -46,7 +45,7 @@ export default function Continent() {
       <Stack maxW={1240} px='4' mt='20' mx='auto' w='100%'>
         <Heading fontSize='36' fontWeight='500' color='#47585B' lineHeight='54px'>Cidades +100</Heading>
         
-        <SimpleGrid minChildWidth='260px' spacing='46px' mt='10px !important'>
+        <SimpleGrid minChildWidth='260px' spacing='46px' mt='40px !important'>
           <Stack maxW={400} borderRadius='4px' overflow='hidden'>
             <Image 
               src='https://images.unsplash.com/photo-1589871090211-7f2efeec05b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80' 

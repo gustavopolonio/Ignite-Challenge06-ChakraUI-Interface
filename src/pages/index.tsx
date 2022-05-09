@@ -1,5 +1,4 @@
 import { Header } from '../components/Header'
-import { MainBanner } from '../components/MainBanner'
 import { InformativeBar } from '../components/InformativeBar'
 import { Footer } from '../components/Footer'
 import { api } from '../services/api'
@@ -71,7 +70,7 @@ export default function Home({ continents }: HomeProps) {
               key={continent.id} 
               style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
             >
-              <Link href={continent.slug} passHref>
+              <Link href={`/${continent.slug}`}passHref>
                 <ChakraLink w='100%'>
                   <Stack
                     position='absolute'
